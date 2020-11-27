@@ -1,35 +1,25 @@
 //Variables
-let cards = document.getElementsByClassName('.card');
+const cards = document.querySelectorAll('.card');
 let moves = document.getElementById('moves');
 var openedCards = [];
 
-for (var i = 0; i < cards.length; i++){
-   cards[i].addEventListener("click", flipCard);
-};
+cards.forEach(card => card.addEventListener('click', flipCard));
 
-var flipCard = function() {
-    this.classList.toggle("rotate")
+function flipCard() {
+  this.classList.toggle('rotate');
 }
 
-//Game timer function
-let time = document.getElementById('time');
-let second = 0, minute = 0, hour = 0;
-var interval;
-
-function gameTime() {
-    interval = setInterval(function() {
-        time.innerHTML = minute+"minute "+second+"seconds";
-        second++;
+function timer () {
+    let second = 0;
+    var minute = 0;
+    var timer = setInterval(function() {
+        document.getElementById('time').innerHTML = minute + second;
         if(second == 60){
             minute++;
             second=0;
         }
-        if(minute == 60){
-            hour++;
-            minute = 0;
-        }
-    },1000);
-}   
+    },1000)
+}
 
 //Shuffle Function - ensures that the card arrangement is never the same
 function shuffle(array) {

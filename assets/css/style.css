@@ -29,6 +29,7 @@
     grid-template-columns: repeat(4, auto);
     grid-gap: 15px;
     justify-content: center;
+    perspective: 1000px;
 }
 
 .card {
@@ -36,6 +37,8 @@
     width: 125px;
     position: relative;
     border: solid 1px black;
+    transform-style: preserve-3d;
+    transition: transform.5s;
 }
 
 .card-image {
@@ -44,12 +47,17 @@
     height: 100%; 
 }
 
-.card.rotate .card-back {
-  transform: rotateY(-180deg); 
+.card.rotate {
+  transform: rotateY(180deg);
 }
 
-.card.rotate .card-front {
-  transform: rotateY(0); 
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(180deg);
 }
 
 
