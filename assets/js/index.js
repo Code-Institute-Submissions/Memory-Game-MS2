@@ -1,14 +1,52 @@
 //Variables
 const cards = document.querySelectorAll('.card');
 let moves = document.getElementById('moves');
-var openedCards = [];
+let flippedCard = false;
+let firstFlip, secondFlip;
+
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 function flipCard() {
-  this.classList.toggle('rotate');
+  this.classList.add('rotate');
+
+  if (!flippedCard) {
+
+    flippedCard = true;
+    firstFlip = this;
+  } else {
+    flippedCard = false;
+    secondFlip = this;
+
+    checkForPotentialMatch ();
+    
+  }
 }
 
+function checkForPotentialMatch () {
+    if (firstFlip.dataset.name === secondFlip.dataset.name) {
+        matchedCards();
+    }   else {
+        unmatchedCards();
+    }
+}
+
+function matchedCards () {
+    firstFlip.removeEventListener('click', flipCard);
+    secondFlip.removeEventListener('click', flipCard);
+}
+
+function unmatchedCards () {
+    setTimeout(() => {
+    firstFlip.classList.remove('rotate');
+    secondFlip.classList.remove('rotate');
+    },800)
+}
+
+
+//StartGame - Function to start a new game
+
+//Game Timer Function
 function timer () {
     let second = 0;
     var minute = 0;
@@ -20,6 +58,8 @@ function timer () {
         }
     },1000)
 }
+
+//Game Moves Function
 
 //Shuffle Function - ensures that the card arrangement is never the same
 function shuffle(array) {
