@@ -2,27 +2,30 @@
 const cards = document.querySelectorAll('.card');
 let moves = document.getElementById('moves');
 let flippedCard = false;
+let cardLock = false;
 let firstFlip, secondFlip;
 
 
-cards.forEach(card => card.addEventListener('click', flipCard));
-
 function flipCard() {
+    if (cardLock) return;
+    if (this === firstFlip) return;
+
   this.classList.add('rotate');
 
   if (!flippedCard) {
 
     flippedCard = true;
     firstFlip = this;
-  } else {
-    flippedCard = false;
+
+    return;
+  } 
+
     secondFlip = this;
 
-    checkForPotentialMatch ();
-    
+    checkForPotentialMatch (); 
   }
-}
 
+//Function to check if the cards have matched
 function checkForPotentialMatch () {
     if (firstFlip.dataset.name === secondFlip.dataset.name) {
         matchedCards();
@@ -31,20 +34,35 @@ function checkForPotentialMatch () {
     }
 }
 
+//Function when the cards match
 function matchedCards () {
     firstFlip.removeEventListener('click', flipCard);
     secondFlip.removeEventListener('click', flipCard);
+
+    cardReset ();
 }
 
+//Function when the cards dont match
 function unmatchedCards () {
+    cardLock = true;
+
     setTimeout(() => {
     firstFlip.classList.remove('rotate');
     secondFlip.classList.remove('rotate');
+
+    cardReset ();
     },800)
 }
 
+//Function to avoid double clicking on cards
+function cardReset () {
+    [flippedCard, cardLock] = [false, false];
+    [firstFlip, secondFlip] = [null, null];
+}
 
-//StartGame - Function to start a new game
+
+//Function to start a new game
+
 
 //Game Timer Function
 function timer () {
@@ -61,6 +79,8 @@ function timer () {
 
 //Game Moves Function
 
+//Restart Game Function
+
 //Shuffle Function - ensures that the card arrangement is never the same
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -74,3 +94,6 @@ function shuffle(array) {
     }
     return array
 };
+
+
+cards.forEach(card => card.addEventListener('click', flipCard));
