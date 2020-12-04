@@ -4,6 +4,7 @@ let moves = document.getElementById('moves');
 let flippedCard = false;
 let cardLock = false;
 let firstFlip, secondFlip;
+let counter = document.querySelector(".moves");
 
 
 function flipCard() {
@@ -61,14 +62,22 @@ function cardReset () {
 }
 
 
+
+
+
 //Function to start a new game
+function init () {
+
+    
+}
 
 
 //Game Timer Function
-function timer () {
-    let second = 0;
-    var minute = 0;
-    var timer = setInterval(function() {
+let second = 0;
+var minute = 0;
+var timer = document.getElementById('.time');
+function gameTimer () {
+    setInterval(function() {
         document.getElementById('time').innerHTML = minute + second;
         if(second == 60){
             minute++;
@@ -76,10 +85,13 @@ function timer () {
         }
     },1000)
 }
+    
 
 //Game Moves Function
-
-//Restart Game Function
+function gameMoves () {
+    moves++;
+    counter.innerHTML = moves;
+}
 
 //Shuffle Function - ensures that the card arrangement is never the same
 function shuffle(array) {
