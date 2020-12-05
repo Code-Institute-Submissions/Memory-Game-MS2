@@ -19,6 +19,7 @@
 }
 
 .game-stats {
+    margin-top: 10px;
     font-family: "Exo", sans-serif;
     font-size: 20px;
 }
@@ -65,6 +66,13 @@
     margin-top: 10px;
     color: #fafafa;
     background-color: #e84610;
+    font-family: "Exo", sans-serif;
+    justify-content: center;
+}
+
+.start {
+    color: #fafafa;
+    background-color: #5A6351;
     font-family: "Exo", sans-serif;
     justify-content: center;
 }

@@ -62,9 +62,6 @@ function cardReset () {
 }
 
 
-
-
-
 //Function to start a new game
 function init () {
 
@@ -92,6 +89,9 @@ function gameMoves () {
     moves++;
     counter.innerHTML = moves;
 }
+
+
+
 
 //Shuffle Function - ensures that the card arrangement is never the same
 function shuffle(array) {
