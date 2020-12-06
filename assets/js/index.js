@@ -6,7 +6,6 @@ let cardLock = false;
 let firstFlip, secondFlip;
 let counter = document.querySelector(".moves");
 
-
 function flipCard() {
     if (cardLock) return;
     if (this === firstFlip) return;
@@ -62,12 +61,36 @@ function cardReset () {
 }
 
 
+//Shuffle Function - ensures that the card arrangement is never the same
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array
+};
+
+//Shuffle Function - ensures that the card arrangement is never the same
+(function shuffleCards () {
+  cards.forEach(card => {
+    let randIndex = Math.floor(Math.random() * 16);
+    card.style.order = randIndex;
+  });
+  })();
+
 //Function to start a new game
 function init () {
 
-    
-}
+//reset the number of game moves
 
+//reset the game timer
+
+}
 
 //Game Timer Function
 let second = 0;
@@ -90,22 +113,5 @@ function gameMoves () {
     counter.innerHTML = moves;
 }
 
-
-
-
-//Shuffle Function - ensures that the card arrangement is never the same
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array
-};
-
-
 cards.forEach(card => card.addEventListener('click', flipCard));
+
