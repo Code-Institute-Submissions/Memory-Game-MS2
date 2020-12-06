@@ -6,6 +6,8 @@ let cardLock = false;
 let firstFlip, secondFlip;
 let counter = document.querySelector(".moves");
 
+
+
 function flipCard() {
     if (cardLock) return;
     if (this === firstFlip) return;
@@ -61,7 +63,7 @@ function cardReset () {
 }
 
 
-//Shuffle Function - ensures that the card arrangement is never the same
+//Fisher-Yates Shuffle.
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -75,7 +77,7 @@ function shuffle(array) {
     return array
 };
 
-//Shuffle Function - ensures that the card arrangement is never the same
+//Shuffle Function - run shuffle function through cards to ensure card arangement is never the same
 (function shuffleCards () {
   cards.forEach(card => {
     let randIndex = Math.floor(Math.random() * 16);

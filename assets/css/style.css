@@ -95,3 +95,33 @@ p {
 
 /*--------------------Media Queries--------------------*/
 
+@media only screen and (max-width: 800px) {
+   .card {
+      width: 90px;
+      height: 75px;
+      line-height: 75px;
+   }
+   .game-container {
+      width: 500px;
+   }
+}
+
+@media only screen and (max-width: 450px) {
+    .card {
+      width: 60px;
+      height: 70px;
+      line-height: 60px;
+      margin: auto;
+   }
+   .game-container {
+      width: 400px;
+   }
+   .game-stats {
+       font-size: 15px;
+   }
+   .restart {
+       padding-top: 10px;
+   }
+}
+
+
