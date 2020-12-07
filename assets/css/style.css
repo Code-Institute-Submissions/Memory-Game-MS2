@@ -63,7 +63,7 @@
 
 
 .restart {
-    margin-top: 10px;
+    margin-top: 20px;
     color: #fafafa;
     background-color: #e84610;
     font-family: "Exo", sans-serif;
@@ -123,5 +123,7 @@ p {
        padding-top: 10px;
    }
 }
+
+
 
 

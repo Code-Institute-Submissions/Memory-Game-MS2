@@ -6,12 +6,11 @@ let cardLock = false;
 let firstFlip, secondFlip;
 let counter = document.querySelector(".moves");
 
-
-
 function flipCard() {
     if (cardLock) return;
     if (this === firstFlip) return;
 
+    gameMoves()
   this.classList.add('rotate');
 
   if (!flippedCard) {
@@ -53,7 +52,7 @@ function unmatchedCards () {
     secondFlip.classList.remove('rotate');
 
     cardReset ();
-    },800)
+    },1000)
 }
 
 //Function to avoid double clicking on cards
@@ -63,7 +62,7 @@ function cardReset () {
 }
 
 
-//Fisher-Yates Shuffle.
+//Fisher-Yates Shuffle Function.
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -86,7 +85,7 @@ function shuffle(array) {
   })();
 
 //Function to start a new game
-function init () {
+function resetGame () {
 
 //reset the number of game moves
 
@@ -97,14 +96,16 @@ function init () {
 //Game Timer Function
 let second = 0;
 var minute = 0;
-var timer = document.getElementById('.time');
+var timer = document.querySelector('.time');
 function gameTimer () {
     setInterval(function() {
-        document.getElementById('time').innerHTML = minute + second;
+        let formattedSecond = ("0" + second).slice(-2);
+        timer.innerHTML = `${minute}:${formattedSecond}`;
         if(second == 60){
             minute++;
             second=0;
         }
+        second++;
     },1000)
 }
     
