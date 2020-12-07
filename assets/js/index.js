@@ -10,7 +10,6 @@ function flipCard() {
     if (cardLock) return;
     if (this === firstFlip) return;
 
-    gameMoves()
   this.classList.add('rotate');
 
   if (!flippedCard) {
@@ -22,7 +21,7 @@ function flipCard() {
   } 
 
     secondFlip = this;
-
+    gameMoves()
     checkForPotentialMatch (); 
   }
 
