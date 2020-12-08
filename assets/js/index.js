@@ -1,10 +1,25 @@
 //Variables
 const cards = document.querySelectorAll('.card');
+const timer = document.querySelector('.time');
 let moves = document.getElementById('moves');
 let flippedCard = false;
 let cardLock = false;
 let firstFlip, secondFlip;
 let counter = document.querySelector(".moves");
+let second = 0;
+let minute = 0;
+let matchedCard = document.getElementsByClassName("match");
+let maximumNumberOfMatches = 0;
+
+function countMatches () {
+    maximumNumberOfMatches++;
+    
+    if (maximumNumberOfMatches == 8) {
+        gameOver();
+    }
+    console.log(maximumNumberOfMatches);
+}
+
 
 function flipCard() {
     if (cardLock) return;
@@ -29,12 +44,13 @@ function flipCard() {
 function checkForPotentialMatch () {
     if (firstFlip.dataset.name === secondFlip.dataset.name) {
         matchedCards();
+        countMatches();
     }   else {
         unmatchedCards();
     }
 }
 
-//Function when the cards match
+//This function will occur when the cards the user clicks are a match
 function matchedCards () {
     firstFlip.removeEventListener('click', flipCard);
     secondFlip.removeEventListener('click', flipCard);
@@ -42,7 +58,7 @@ function matchedCards () {
     cardReset ();
 }
 
-//Function when the cards dont match
+//This function will occur when the cards the user has clicked arent the same causing them to be unmatched
 function unmatchedCards () {
     cardLock = true;
 
@@ -54,7 +70,7 @@ function unmatchedCards () {
     },1000)
 }
 
-//Function to avoid double clicking on cards
+//This fucntion stops the user from double clicking on the cards
 function cardReset () {
     [flippedCard, cardLock] = [false, false];
     [firstFlip, secondFlip] = [null, null];
@@ -75,27 +91,33 @@ function shuffle(array) {
     return array
 };
 
+
 //Shuffle Function - run shuffle function through cards to ensure card arangement is never the same
-(function shuffleCards () {
+function shuffleCards () {
   cards.forEach(card => {
     let randIndex = Math.floor(Math.random() * 16);
     card.style.order = randIndex;
   });
-  })();
+}
 
 //Function to start a new game
 function resetGame () {
+    shuffleCards();
 
-//reset the number of game moves
-
-//reset the game timer
-
+    //reset the number of game moves so it starts from 0 again
+    moves = 0;
+    counter.innerHTML = moves;
+    //reset the game timer so the time starts from 0:00 
+    second = 0;
+    minute = 0; 
+    //timer = document.querySelector(".time");
+    clearInterval(interval);
+    //remove all rotate classes
+    matchedCards.removeClass('rotate');
+    matchedCards.removeClass('rotate');
 }
 
-//Game Timer Function
-let second = 0;
-var minute = 0;
-var timer = document.querySelector('.time');
+//Game Timer Function - this function will increase the number of seconds and once the seconds hit 60, the minute will increment by 1
 function gameTimer () {
     setInterval(function() {
         let formattedSecond = ("0" + second).slice(-2);
@@ -109,11 +131,19 @@ function gameTimer () {
 }
     
 
-//Game Moves Function
+//Game Moves Function - this function will increment by one after every second flip, will allow the user to see how many moves he has completed the game in
 function gameMoves () {
     moves++;
     counter.innerHTML = moves;
 }
 
+//Game Over Function - this function will be called when the user has completed the game causing the modal to appear. 
+function gameOver () {
+    $('#congratulationsMessage').text(`You completed the game in ${minute} + ${formattedSecond}, with a total of ${moves} moves!`);
+    $('#congratulationsModal').modal('toggle');
+}
+
+
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+shuffleCards();

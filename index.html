@@ -21,6 +21,7 @@
             Time <span class="time">0:00</span>
             </div>
             <button type="reset" class="btn btn-secondary start" onclick="gameTimer()">Start</button>
+            <button type="reset" class="btn btn-secondary restart" onclick="resetGame()">Restart</button>
             <div class="game-stats">
             Moves <span class="moves">0</span>
             </div>
@@ -89,12 +90,25 @@
             <img class="card-front card-image" src="assets/images/snowflake.jpg">
             <img class="card-back card-image" src="assets/images/bolt.jpg">
         </div>
+
+      <div class="modal fade" id="congratulationsModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal-label">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3 class="modal-title" id="congratulationsModal-label">Congratulations you have won!</h3>
+               </div>
+               <div class="modal-body">
+                  <p id="congratulationsMessage"></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" onclick="resetGame(); " class="btn btn-info" data-dismiss="modal">Play Again</button>
+               </div>
+            </div>
+         </div>
+      </div>
         
-        </div>
-
-        <button type="reset" class="btn btn-secondary restart" onclick="resetGame()">Restart</button>
-
-
+    </div>
+    
           <!----------------------Footer-------------------------->
     <footer class="footer-container">
         <p>Created by Rishi Sood</p>
