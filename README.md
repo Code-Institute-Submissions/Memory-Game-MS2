@@ -43,3 +43,25 @@ I created my wireframes on Figma. I first designed the basic layout of the webpa
 
 One feature that I would like to implement would be to increase the grid size, so the game becomes a bit more difficult as they must remember more cards.
 Another feature is the option of difficulty levels. To make the game more difficult I could increase the grid size as mentioned above or even reduce the times between the card being clicked and when it flips back over for the user to have less time to remember what logo is on each card. 
+
+### Colours
+
+The game does not have many colours with the background being white and the text being black, the only colours that can be seen are the buttons which are red and green. 
+
+### Font
+
+As my project I created was a game, there did not need to be much text, however when there was, I wanted the text to stand out. The font I used was Exo and I believed it was the font which stood out the most
+
+## Technologies Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) – HTML was used to create the basic structure of the website.
+* [CSS3](https://en.wikipedia.org/wiki/CSS) - I used CSS to style the pages of the website.
+*[JavaScript](https://www.javascript.com/) – This was used to write the script which would make the game run. 
+* [Font Awesome](https://fontawesome.com/) – I used font awesome for the images which appear on the cards. 
+* [Bootstrap](https://getbootstrap.com/) – I used v4.5 of bootstrap for the modal as well as the buttons. 
+* [jQuery](https://jquery.com/) - The project uses JQuery to simplify DOM manipulation.
+* [GitHub](https://github.com/) – I used GitHub to create the repository, it also hosts the website. 
+* [Gitpod](https://www.gitpod.io/) -  This was the IDE I used for the project
+* [W3C Markup Validation Service](https://validator.w3.org/) – I used this to validate my HTML to see if there were any errors in my HTML. 
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - I used this to validate my CSS to see if there were any errors in my CSS.
+* [JavaScript Validator](https://esprima.org/demo/validate.html) – I used this to check the syntax in my JavaScript was all correct. 
