@@ -114,6 +114,7 @@ function resetGame () {
      for (var i = 0; i < cards.length; i++){
     cards[i].classList.remove('rotate');
      }
+    cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
 //Game Timer Function - this function will increase the number of seconds and once the seconds hit 60, the minute will increment by 1
