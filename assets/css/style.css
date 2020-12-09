@@ -15,7 +15,7 @@
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-evenly;
-    padding-top: 15px;
+    padding-top: 25px;
 }
 
 .game-stats {

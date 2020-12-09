@@ -20,7 +20,7 @@ function countMatches () {
     console.log(maximumNumberOfMatches);
 }
 
-
+//flipCard Function - this function allows the cards to be flipped over
 function flipCard() {
     if (cardLock) return;
     if (this === firstFlip) return;
@@ -111,8 +111,9 @@ function resetGame () {
     second = 0;
     minute = 0; 
      //remove all rotate classes
+     for (var i = 0; i < cards.length; i++){
     cards[i].classList.remove('rotate');
-
+     }
 }
 
 //Game Timer Function - this function will increase the number of seconds and once the seconds hit 60, the minute will increment by 1
