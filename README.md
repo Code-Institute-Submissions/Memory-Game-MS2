@@ -110,7 +110,7 @@ All three of the validation services showed that there were not any errors with 
 
 <h4 align="center"><img src="Documentation/CSSValidator.PNG"></h4>
 <h4 align="center"><img src="Documentation/HTMLValidator.jpg"></h4>
-<h4 align="center"><img src="Documentation/JsValidator.PNG"></h4>
+<h4 align="center"><img src="Documentation/JSValidator.PNG"></h4>
 
 
 ### Testing Methods
