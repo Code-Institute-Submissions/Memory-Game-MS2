@@ -56,7 +56,7 @@ As my project I created was a game, there did not need to be much text, however 
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML5) – HTML was used to create the basic structure of the website.
 * [CSS3](https://en.wikipedia.org/wiki/CSS) - I used CSS to style the pages of the website.
-*[JavaScript](https://www.javascript.com/) – This was used to write the script which would make the game run. 
+* [JavaScript](https://www.javascript.com/) – This was used to write the script which would make the game run. 
 * [Font Awesome](https://fontawesome.com/) – I used font awesome for the images which appear on the cards. 
 * [Bootstrap](https://getbootstrap.com/) – I used v4.5 of bootstrap for the modal as well as the buttons. 
 * [jQuery](https://jquery.com/) - The project uses JQuery to simplify DOM manipulation.
