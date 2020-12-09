@@ -8,12 +8,12 @@ let firstFlip, secondFlip;
 let counter = document.querySelector(".moves");
 let second = 0;
 let minute = 0;
-let matchedCard = document.getElementsByClassName("match");
 let maximumNumberOfMatches = 0;
+let formattedSecond;
 
 function countMatches () {
-    maximumNumberOfMatches++;
-    
+    maximumNumberOfMatches++
+
     if (maximumNumberOfMatches == 8) {
         gameOver();
     }
@@ -110,17 +110,15 @@ function resetGame () {
     //reset the game timer so the time starts from 0:00 
     second = 0;
     minute = 0; 
-    //timer = document.querySelector(".time");
-    clearInterval(interval);
-    //remove all rotate classes
-    matchedCards.removeClass('rotate');
-    matchedCards.removeClass('rotate');
+     //remove all rotate classes
+    cards[i].classList.remove('rotate');
+
 }
 
 //Game Timer Function - this function will increase the number of seconds and once the seconds hit 60, the minute will increment by 1
 function gameTimer () {
     setInterval(function() {
-        let formattedSecond = ("0" + second).slice(-2);
+        formattedSecond = ("0" + second).slice(-2);
         timer.innerHTML = `${minute}:${formattedSecond}`;
         if(second == 60){
             minute++;
@@ -139,7 +137,7 @@ function gameMoves () {
 
 //Game Over Function - this function will be called when the user has completed the game causing the modal to appear. 
 function gameOver () {
-    $('#congratulationsMessage').text(`You completed the game in ${minute} + ${formattedSecond}, with a total of ${moves} moves!`);
+    $('#congratulationsMessage').text(`You completed the game in ${minute} mins ${formattedSecond} secs, with a total of ${moves} moves!`);
     $('#congratulationsModal').modal('toggle');
 }
 

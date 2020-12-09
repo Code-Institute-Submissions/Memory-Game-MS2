@@ -63,7 +63,6 @@
 
 
 .restart {
-    margin-top: 20px;
     color: #fafafa;
     background-color: #e84610;
     font-family: "Exo", sans-serif;
@@ -74,7 +73,6 @@
     color: #fafafa;
     background-color: #5A6351;
     font-family: "Exo", sans-serif;
-
 }
 
 /*--------------------Footer--------------------*/
@@ -98,7 +96,7 @@ p {
 @media only screen and (max-width: 800px) {
    .card {
       width: 90px;
-      height: 75px;
+      height: 80px;
       line-height: 75px;
    }
    .game-container {
@@ -108,8 +106,8 @@ p {
 
 @media only screen and (max-width: 450px) {
     .card {
-      width: 60px;
-      height: 70px;
+      width: 70px;
+      height: 80px;
       line-height: 60px;
       margin: auto;
    }
