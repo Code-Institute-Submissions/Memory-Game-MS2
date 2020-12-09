@@ -65,3 +65,97 @@ As my project I created was a game, there did not need to be much text, however 
 * [W3C Markup Validation Service](https://validator.w3.org/) – I used this to validate my HTML to see if there were any errors in my HTML. 
 * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) - I used this to validate my CSS to see if there were any errors in my CSS.
 * [JavaScript Validator](https://esprima.org/demo/validate.html) – I used this to check the syntax in my JavaScript was all correct. 
+
+## Testing 
+
+* Card Flip – When the user clicks on the card, the card is expected the flip revealing the icon on the back of the card. When I tested this, the card did flip worked as expected without any errors. 
+* Card Match – When the user clicks on two cards and they turn over the same logo, the two cards should remain locked on the screen. To test this, I played the game and when there was a match, the matched cards remained locked on the screen. 
+* Card Unmatched - When the user clicks on a card, and they do not match, the card is expected to flip back over. To test this, I again played the game and when the cards did not match, they did flip back over as was expected. 
+* Modal – Once the game is complete the user should have a modal appear on the screen, the modal should give the user their game statistics. To test this feature, I completed the game and at the of the game, a modal did appear and did include all the right information that was expected. Also, in the modal a play again button was present and when clicked, the game restarted. 
+* Buttons – There are three buttons on the page. A start button, a restart button and a play again button. When clicked each should run its own function. The start button should start the game timer, the restart button should reset the timer and counter while also shuffling the cards on the board while the play again button should allow the user to play the game again. When tested, each of the buttons fulfilled their expected functions. 
+* Timer - The game timer should start when the user clicks the start button. The timer should start by incrementing the seconds and once the seconds hit 60, the timer should change to 1 minute + seconds. When tested, the timer worked as expected. 
+* Move Counter – Similar to the timer, the counter is expected to increment by 1 however it is only set to increase after every second card is turned over. When I tested this, the counter worked as expected. 
+* To summarize, all the features of the game work as they were expected to and there were not any issues that I came across when conducting the tests. 
+
+### Testing Stories from UX section 
+
+#### User Visitor Goals
+
+* As a user I want to play a memory game in which I must match up cards in the fewest amount of moves and least amount of time. 
+
+1. As there is only one page, the user automatically arrives onto the page in which the game is on. 
+2. If the user clicks the start button, the timer will automatically start.
+3. There are functions which will count the users number of moves.
+4. At the end of the game a modal will appear which shows the user games statistics. 
+
+* As a user I expect there to be an option which allows me to restart the game.
+
+1. As the user will be able to see, there is a restart button at the top of the page.
+2. When clicked, the game will restart. This includes the game moves, the timer and the cards will shuffle. 
+
+* As a user I would expect the game to be able to be played on any devices and the design remains the same even though they are on different screen sizes.
+
+1. By using media queries, the game can be played on all screen sizes without any issues. 
+2. The game was tested on many different screen sizes in order to ensure that there werent any issues with the sizing.
+
+### Testing Tools
+
+I used the following validation services to validate my code:
+
+* W3C Markup Validation Service 
+* W3C CSS Validation Service
+* JavaScript Validation Service
+
+All three of the validation services showed that there were not any errors with the code I had written. 
+
+<h4 align="center"><img src="Documentation/CSSValidator.PNG"></h4>
+<h4 align="center"><img src="Documentation/HTMLValidator.jpg"></h4>
+<h4 align="center"><img src="Documentation/JsValidator.PNG"></h4>
+
+
+### Testing Methods
+
+I used the following devices to test my website on smaller screen sizes:
+
+* Samsung S20
+* iPad Pro
+* Samsung S10
+
+I then used the developer tools on Google Chrome to test the website on different devices. The devices I tested the site on are as follows:
+
+* iPhone X
+* iPad
+* Moto G4
+
+## Deployment
+
+I used GitHub pages to deploy my website. The way I did this is shown below:
+
+1.	I first logged into my GitHub account
+2.	I clicked on the Memory-Game-MS2 repository and then went onto the settings tab.
+3.	I scrolled to the bottom of the page and went to the GitHub pages area
+4.	In the GitHub pages section, I changed the branch dropdown list option from none to master.
+5.	After this, the page automatically refreshed and the link to the website now appears.
+
+To run the code locally, the following steps need to be undertaken:
+
+1.	In the Memory-Game-2 repository, click clone or download
+2.	A URL will pop up, in which you should copy the URL
+3.	Open an IDE of your choice
+4.	In the terminal, type in git clone and paste the URL you copied earlier and hit the enter button.
+
+## Credits
+
+### Content 
+
+* The fonts were used from Google Fonts
+* The icons were used from the Font Awesome website
+* The modal and buttons were used from the bootstrap documentation page. 
+
+### Acknowledgments 
+
+* I received advice from my mentor Aaron Sinnott
+* I also received help from the Code Institute Mentoring team who helped me when I had errors which I could not fix myself
+* (https://www.youtube.com/watch?v=ZniVgo8U7ek) – I used this video to guide on how to create 3D transitions when it came to the flipCard functions as well as provide some inspiration on how to create the game
+
+
